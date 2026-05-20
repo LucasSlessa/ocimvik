@@ -3,8 +3,65 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>OCIMVIK — Performance. Ciência. Longevidade.</title>
-<meta name="description" content="OCIMVIK — Suplementação científica para performance humana mensurável."/>
+<title>OCIMVIK | Creatina Monohidratada e Suplementação Científica</title>
+<meta name="description" content="OCIMVIK desenvolve suplementos de alta performance humana baseados em evidências científicas. Conheça nossa Creatina Monohidratada pura."/>
+<meta name="keywords" content="ocimvik, creatina monohidratada, performance humana, suplementação científica, longevidade esportiva, foco, treino de alta exigência"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="OCIMVIK"/>
+<link rel="canonical" href="https://www.ocimvik.com.br/"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.ocimvik.com.br/"/>
+<meta property="og:title" content="OCIMVIK | Creatina Monohidratada e Suplementação Científica"/>
+<meta property="og:description" content="Suplementação de alta exigência baseada em ciência e precisão. Conheça nossa Creatina Monohidratada 100% pura."/>
+<meta property="og:image" content="https://www.ocimvik.com.br/images/img1.png"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://www.ocimvik.com.br/"/>
+<meta property="twitter:title" content="OCIMVIK | Creatina Monohidratada e Suplementação Científica"/>
+<meta property="twitter:description" content="Suplementação de alta exigência baseada em ciência e precisão. Conheça nossa Creatina Monohidratada 100% pura."/>
+<meta property="twitter:image" content="https://www.ocimvik.com.br/images/img1.png"/>
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="images/LOGO EM 4000X4000 VET.svg"/>
+<link rel="apple-touch-icon" href="images/LOGO EM 4000X4000 VET.svg"/>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Brand",
+      "@id": "https://www.ocimvik.com.br/#brand",
+      "name": "OCIMVIK",
+      "url": "https://www.ocimvik.com.br/",
+      "logo": "https://www.ocimvik.com.br/images/LOGO%20EM%204000X4000%20VET.svg",
+      "description": "Suplementação científica de alta exigência para performance humana."
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.ocimvik.com.br/#product-creatine",
+      "name": "Creatina Monohidratada OCIMVIK",
+      "image": "https://www.ocimvik.com.br/images/img1.png",
+      "description": "Creatine Monohydrate 100% pura monohidratada. Dose precisa de 3g, rendimento de 300g, sem açúcares ou aditivos.",
+      "brand": {
+        "@id": "https://www.ocimvik.com.br/#brand"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.amazon.com.br",
+        "priceCurrency": "BRL",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
 <style>
@@ -33,17 +90,39 @@ nav.scrolled{
   backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(140,144,145,0.1);
 }
-.nav-logo img{height:42px;width:42px;object-fit:contain;filter:invert(1);mix-blend-mode:screen;clip-path:inset(0 0 28% 0);transform:scale(1.2)}
+.nav-logo{display:flex;align-items:center;height:42px;overflow:hidden;cursor:pointer}
+.nav-logo img{height:72px;width:auto;object-fit:contain;margin-top:-14px;opacity:0.85;transition:opacity .3s ease,filter .3s ease}
+.nav-logo:hover img{opacity:1;filter:drop-shadow(0 0 8px rgba(92,110,78,0.6))}
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{color:rgba(244,243,239,.6);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .25s}
 .nav-links a:hover{color:var(--branco)}
 .nav-cta{
-  background:var(--oliva);color:var(--branco);border:none;
-  padding:10px 24px;border-radius:3px;font-family:'Inter',sans-serif;
-  font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  cursor:pointer;transition:background .25s,transform .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--branco);
+  border: 1px solid var(--oliva);
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.nav-cta:hover{background:#4d5c40;transform:translateY(-1px)}
+.nav-cta:hover{
+  background: rgba(92, 110, 78, 0.15);
+  border-color: #ff9900;
+  color: var(--branco);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 153, 0, 0.15);
+}
 nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
 
 /* ── HERO LEFT (NOVA HERO) ── */
@@ -325,12 +404,78 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
 .metric-unit{font-size:.7rem;color:var(--oliva);font-weight:600;letter-spacing:.08em}
 .metric-label{font-size:.75rem;color:var(--titanio);margin-top:4px}
 .btn-primary{
-  display:inline-block;background:var(--oliva);color:var(--branco);
-  padding:14px 36px;border-radius:3px;font-size:.85rem;font-weight:700;
-  letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
-  transition:background .25s,transform .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--oliva);
+  color: var(--branco);
+  border: 1px solid transparent;
+  padding: 16px 40px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.btn-primary:hover{background:#4d5c40;transform:translateY(-2px)}
+.btn-primary:hover{
+  background: var(--branco);
+  color: var(--carbon);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(255, 153, 0, 0.2);
+}
+
+/* Amazon icons & micro-animations */
+.amazon-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.nav-cta:hover .amazon-icon, .btn-primary:hover .amazon-icon {
+  transform: scale(1.15);
+}
+.amazon-icon .az-text {
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+.amazon-icon .az-smile {
+  fill: currentColor;
+  transition: fill 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: center;
+}
+.nav-cta:hover .amazon-icon .az-smile,
+.btn-primary:hover .amazon-icon .az-smile {
+  fill: #ff9900;
+}
+
+/* Light sweep effect */
+.nav-cta::before, .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+}
+.nav-cta:hover::before, .btn-primary:hover::before {
+  animation: shine 1.2s ease-in-out infinite;
+}
+@keyframes shine {
+  100% {
+    left: 200%;
+  }
+}
 .produto-visual{display:flex;align-items:center;justify-content:center}
 .produto-placeholder{
   width:320px;height:460px;
@@ -338,7 +483,8 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
   border:1px solid rgba(140,144,145,.1);border-radius:6px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
 }
-.produto-placeholder img{width:90px;height:90px;filter:invert(1);mix-blend-mode:screen;opacity:.7;clip-path:inset(0 0 28% 0);transform:scale(1.2)}
+.produto-placeholder img{height:153px;width:auto;object-fit:contain;margin-top:-30px;margin-bottom:-33px;opacity:0.7;transition:opacity .3s ease,filter .3s ease}
+.produto-placeholder:hover img{opacity:0.95;filter:drop-shadow(0 0 10px rgba(92,110,78,0.6))}
 .produto-placeholder span{
   font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;
   letter-spacing:.22em;text-transform:uppercase;color:var(--titanio);
@@ -361,13 +507,179 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
 .stat-desc{font-size:.75rem;color:var(--titanio);margin-top:8px;letter-spacing:.1em;text-transform:uppercase}
 
 /* ── FOOTER ── */
-footer{
-  border-top:1px solid rgba(140,144,145,.08);padding:48px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;
+.footer-section {
+  border-top: 1px solid rgba(140, 144, 145, 0.08);
+  background-color: var(--carbon);
+  padding: 80px 48px 48px;
 }
-.footer-logo img{height:36px;filter:invert(1);mix-blend-mode:screen;opacity:.4;clip-path:inset(0 0 28% 0);transform:scale(1.2)}
-.footer-tagline{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--titanio)}
-.footer-right{font-size:.72rem;color:rgba(200,201,199,.25);letter-spacing:.06em}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+.col-brand {
+  gap: 20px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  overflow: hidden;
+}
+.footer-logo img {
+  height: 82px;
+  width: auto;
+  object-fit: contain;
+  margin-top: -16px;
+  opacity: 0.8;
+  transition: opacity .3s ease, filter .3s ease;
+  transform-origin: left center;
+}
+.footer-logo:hover img {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(92,110,78,0.6));
+}
+.brand-desc {
+  font-size: 0.85rem;
+  color: var(--titanio);
+  line-height: 1.6;
+  max-width: 320px;
+}
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.footer-socials a {
+  color: var(--titanio);
+  transition: color 0.25s, transform 0.2s;
+}
+.footer-socials a:hover {
+  color: var(--branco);
+  transform: translateY(-2px);
+}
+.footer-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--branco);
+  margin-bottom: 24px;
+  position: relative;
+}
+.footer-title::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: var(--oliva);
+  margin-top: 8px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  color: var(--titanio);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.25s, padding-left 0.25s;
+}
+.footer-links a:hover {
+  color: var(--branco);
+  padding-left: 4px;
+}
+.contact-info li {
+  font-size: 0.85rem;
+  color: var(--titanio);
+  line-height: 1.5;
+}
+.contact-info li span {
+  font-weight: 500;
+  color: var(--branco);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(140, 144, 145, 0.06);
+  padding-top: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.footer-tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--titanio);
+}
+.footer-right {
+  font-size: 0.72rem;
+  color: rgba(200, 201, 199, 0.25);
+  letter-spacing: 0.06em;
+}
+
+/* ── HERO SCROLL INDICATOR ── */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+.hero-scroll-indicator:hover {
+  opacity: 1;
+}
+.scroll-mouse {
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid var(--titanio);
+  border-radius: 12px;
+  position: relative;
+}
+.scroll-mouse::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 6px;
+  background: var(--oliva);
+  border-radius: 2px;
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+@keyframes scrollWheel {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  50%  { opacity: 0.3; transform: translateX(-50%) translateY(10px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.scroll-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--titanio);
+}
 
 /* ANIMATIONS */
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
@@ -379,7 +691,18 @@ footer{
   nav{padding:14px 20px}.nav-links{display:none}
   .produto-inner{grid-template-columns:1fr;gap:40px}
   .produto,.ciencia,.manifesto-section{padding:80px 20px}
-  footer{padding:32px 20px}
+  .footer-section { padding: 60px 20px 32px; }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 16px;
+  }
   .canvas-sticky .overlay{padding:0 20px}
   .ov-metrics{flex-wrap:wrap}
   .ov-metric{padding:14px 20px}
@@ -399,20 +722,28 @@ footer{
 
 <!-- NAV -->
 <nav id="main-nav">
-  <div class="nav-logo"><img src="images/LOGO EM 4000X4000 VET.svg" alt="OCIMVIK"/></div>
+  <div class="nav-logo"><img src="images/LOGO EM 4000X4000 VET.svg" alt="Logotipo OCIMVIK"/></div>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#ciencia">Ciência</a></li>
     <li><a href="#produtos">Produtos</a></li>
     <li><a href="#manifesto">Manifesto</a></li>
   </ul>
-  <button class="nav-cta">Comprar na Amazon</button>
+  <a href="https://www.amazon.com.br" target="_blank" class="nav-cta" aria-label="Comprar suplementos OCIMVIK na Amazon">
+    <svg class="amazon-icon" viewBox="0 0 602 182" width="48" height="14" xmlns="http://www.w3.org/2000/svg">
+      <path class="az-text" d="M373.6 141.2c-34.2 25.3-83.8 38.8-126.5 38.8-59.8 0-113.7-22.1-154.5-58.9-3.2-2.9-.3-6.9 3.5-4.6 44 25.6 98.4 41 154.7 41 37.9 0 79.6-7.9 118-24.1 5.8-2.5 10.6 3.8 4.8 7.8z"/>
+      <path class="az-smile" d="M387.4 125.6c-4.4-5.6-28.9-2.7-39.9-1.3-3.4.4-3.9-2.5-.8-4.7 19.6-13.7 51.6-9.8 55.4-5.2 3.8 4.7-1 37.1-19.3 52.6-2.8 2.4-5.5 1.1-4.3-2 4.2-10.4 13.3-33.8 8.9-39.4z"/>
+      <path class="az-text" d="M348.9 20.5V6.3c0-2.2 1.6-3.6 3.6-3.6h64.1c2 0 3.7 1.5 3.7 3.6v12.1c0 2-1.8 4.7-4.8 8.9l-33.2 47.4c12.3-.3 25.3 1.5 36.5 7.8 2.5 1.4 3.2 3.5 3.4 5.5v15.1c0 2.1-2.3 4.5-4.7 3.2-19.5-10.2-45.4-11.3-66.9.1-2.2 1.2-4.5-1.1-4.5-3.2V88.6c0-2.3 0-6.2 2.4-9.7l38.5-55.2h-33.5c-2 0-3.7-1.5-3.7-3.6l.1.4zM124.8 108.8H105c-1.9-.1-3.4-1.5-3.5-3.4V6.5c0-2.1 1.7-3.7 3.8-3.7h18.4c1.9.1 3.5 1.6 3.6 3.5v13h.4c4.8-12.7 13.9-18.6 26.1-18.6 12.4 0 20.2 5.9 25.7 18.6 4.8-12.7 15.7-18.6 27.4-18.6 8.3 0 17.4 3.4 22.9 11.1 6.3 8.5 5 20.9 5 31.8l0 61.5c0 2.1-1.7 3.7-3.8 3.7h-19.7c-2-.1-3.5-1.7-3.5-3.7V52.1c0-4.3.4-15-.6-19-.5-6.6-5.7-8.5-11.3-8.5-4.6 0-9.5 3.1-11.5 8.1-2 5-1.8 13.3-1.8 19.4v53c0 2.1-1.7 3.7-3.8 3.7h-19.7c-2-.1-3.5-1.7-3.5-3.7l0-53c0-11.3 1.8-27.9-11.8-27.9-13.8 0-13.3 16.2-13.3 27.9l0 53c0 2.1-1.7 3.7-3.8 3.7l-.6.1zM464 .7c29.3 0 45.1 25.1 45.1 57.1 0 30.9-17.5 55.4-45.1 55.4-28.7 0-44.3-25.1-44.3-56.4 0-31.5 15.8-56.1 44.3-56.1zm.2 20.7c-14.5 0-15.4 19.8-15.4 32.1 0 12.3-.2 38.6 15.2 38.6 15.2 0 15.9-21.2 15.9-34.1 0-8.5-.4-18.7-2.8-26.8-2.1-7-6.3-9.8-12.9-9.8zM549.4 108.8h-19.6c-2-.1-3.5-1.7-3.5-3.7l0-98.6c.2-1.9 1.8-3.4 3.8-3.4h18.2c1.7.1 3.2 1.4 3.5 3.1v15.1h.4c5.5-13.7 13.2-20.2 26.8-20.2 8.9 0 17.5 3.2 23.1 12 5.2 8.1 5.2 21.8 5.2 31.6v60.8c-.2 1.9-1.8 3.3-3.8 3.3h-19.8c-1.8-.1-3.3-1.5-3.5-3.3V51c0-11.1 1.3-27.3-12-27.3-4.7 0-9 3.1-11.1 7.9-2.7 6-3.1 12-3.1 19.4v54.1c0 2.1-1.7 3.7-3.8 3.7h.3zM306.8 62c0 7.7.2 14.2-3.7 21.1-3.2 5.6-8.2 9-13.8 9-7.7 0-12.2-5.8-12.2-14.5 0-17 15.3-20.1 29.7-20.1v4.5zm20.1 48.6c-1.3 1.2-3.3 1.3-4.8.5-6.8-5.6-8-8.2-11.7-13.6-11.2 11.4-19.1 14.8-33.6 14.8-17.2 0-30.5-10.6-30.5-31.8 0-16.6 9-27.9 21.8-33.4 11.1-4.9 26.6-5.8 38.5-7.1v-2.7c0-4.9.4-10.7-2.5-14.9-2.5-3.8-7.4-5.4-11.7-5.4-7.9 0-15 4.1-16.7 12.5-.4 1.9-1.7 3.7-3.6 3.8l-19.2-2.1c-1.7-.4-3.6-1.7-3.1-4.3 4.6-24.5 26.8-31.9 46.6-31.9 10.2 0 23.5 2.7 31.5 10.4 10.2 9.5 9.2 22.2 9.2 36v32.6c0 9.8 4.1 14.1 7.9 19.4 1.3 1.9 1.6 4.2-.1 5.6-4.3 3.6-12 10.2-16.2 14l-.3-.4h.4zM55.5 62c0 7.7.2 14.2-3.7 21.1-3.2 5.6-8.2 9-13.8 9-7.7 0-12.2-5.8-12.2-14.5 0-17 15.3-20.1 29.7-20.1v4.5zm20.1 48.6c-1.3 1.2-3.3 1.3-4.8.5-6.8-5.6-8-8.2-11.7-13.6-11.2 11.4-19.1 14.8-33.6 14.8C8.3 112.3-5 101.7-5 80.5c0-16.6 9-27.9 21.8-33.4 11.1-4.9 26.6-5.8 38.5-7.1v-2.7c0-4.9.4-10.7-2.5-14.9-2.5-3.8-7.4-5.4-11.7-5.4-7.9 0-15 4.1-16.7 12.5-.4 1.9-1.7 3.7-3.6 3.8L1.6 31.2c-1.7-.4-3.6-1.7-3.1-4.3C3.1 2.4 25.3-5 45.1-5c10.2 0 23.5 2.7 31.5 10.4 10.2 9.5 9.2 22.2 9.2 36v32.6c0 9.8 4.1 14.1 7.9 19.4 1.3 1.9 1.6 4.2-.1 5.6-4.3 3.6-12 10.2-16.2 14l-.3-.4h.5z"/>
+    </svg>
+    Comprar
+  </a>
 </nav>
 
+<main>
 <!-- ══════════════════════════════
      HERO HUD — painel técnico
      ══════════════════════════════ -->
-<section class="hero-left" id="home">
+<section class="hero-left" id="home" aria-label="Apresentação OCIMVIK">
   <div class="hero-left-bg"></div>
 
   <div class="hero-left-content reveal">
@@ -426,7 +757,12 @@ footer{
       Suplementação inteligente para<br>
       quem busca evolução contínua.
     </p>
-    <a href="#produtos" class="hero-left-btn">CONHEÇA A LINHA &gt;</a>
+    <a href="#produtos" class="hero-left-btn" aria-label="Ver produtos de performance">CONHEÇA A LINHA &gt;</a>
+  </div>
+
+  <div class="hero-scroll-indicator" onclick="document.getElementById('canvas-section').scrollIntoView({behavior:'smooth'})">
+    <div class="scroll-mouse"></div>
+    <span class="scroll-label">scroll</span>
   </div>
 </section>
 
@@ -434,7 +770,7 @@ footer{
      CANVAS SCROLL ANIMATION — segunda seção
      Total scroll height: 600vh (4 overlays)
      ══════════════════════════════════════════ -->
-<section id="canvas-section">
+<section id="canvas-section" aria-label="Tecnologia e Precisão">
   <div style="height:600vh">
     <div class="canvas-sticky">
       <canvas id="loco-canvas"></canvas>
@@ -490,7 +826,7 @@ footer{
 </section>
 
 <!-- MANIFESTO -->
-<section class="manifesto-section" id="manifesto">
+<section class="manifesto-section" id="manifesto" aria-label="Manifesto OCIMVIK">
   <div class="manifesto-bg" style="background-image: url('images/fundo%20manifesto.png');"></div>
   <div class="manifesto-container">
     <div class="manifesto-header reveal">
@@ -519,7 +855,7 @@ footer{
 </section>
 
 <!-- PRODUTOS -->
-<section class="produto" id="produtos">
+<section class="produto" id="produtos" aria-label="Produtos OCIMVIK">
   <div class="produto-inner">
     <div class="produto-copy">
       <div class="section-label reveal">Performance Series</div>
@@ -531,7 +867,14 @@ footer{
         <div class="metric"><div class="metric-val">3<span class="metric-unit">g</span></div><div class="metric-label">Dose Precisa</div></div>
         <div class="metric"><div class="metric-val">300<span class="metric-unit">g</span></div><div class="metric-label">Rendimento</div></div>
       </div>
-      <a href="https://www.amazon.com.br" target="_blank" class="btn-primary reveal">Ver na Amazon</a>
+      <a href="https://www.amazon.com.br" target="_blank" class="btn-primary reveal" aria-label="Comprar Creatina Monohidratada OCIMVIK na Amazon">
+        <svg class="amazon-icon" viewBox="0 0 602 182" width="56" height="17" xmlns="http://www.w3.org/2000/svg">
+          <path class="az-text" d="M373.6 141.2c-34.2 25.3-83.8 38.8-126.5 38.8-59.8 0-113.7-22.1-154.5-58.9-3.2-2.9-.3-6.9 3.5-4.6 44 25.6 98.4 41 154.7 41 37.9 0 79.6-7.9 118-24.1 5.8-2.5 10.6 3.8 4.8 7.8z"/>
+          <path class="az-smile" d="M387.4 125.6c-4.4-5.6-28.9-2.7-39.9-1.3-3.4.4-3.9-2.5-.8-4.7 19.6-13.7 51.6-9.8 55.4-5.2 3.8 4.7-1 37.1-19.3 52.6-2.8 2.4-5.5 1.1-4.3-2 4.2-10.4 13.3-33.8 8.9-39.4z"/>
+          <path class="az-text" d="M348.9 20.5V6.3c0-2.2 1.6-3.6 3.6-3.6h64.1c2 0 3.7 1.5 3.7 3.6v12.1c0 2-1.8 4.7-4.8 8.9l-33.2 47.4c12.3-.3 25.3 1.5 36.5 7.8 2.5 1.4 3.2 3.5 3.4 5.5v15.1c0 2.1-2.3 4.5-4.7 3.2-19.5-10.2-45.4-11.3-66.9.1-2.2 1.2-4.5-1.1-4.5-3.2V88.6c0-2.3 0-6.2 2.4-9.7l38.5-55.2h-33.5c-2 0-3.7-1.5-3.7-3.6l.1.4zM124.8 108.8H105c-1.9-.1-3.4-1.5-3.5-3.4V6.5c0-2.1 1.7-3.7 3.8-3.7h18.4c1.9.1 3.5 1.6 3.6 3.5v13h.4c4.8-12.7 13.9-18.6 26.1-18.6 12.4 0 20.2 5.9 25.7 18.6 4.8-12.7 15.7-18.6 27.4-18.6 8.3 0 17.4 3.4 22.9 11.1 6.3 8.5 5 20.9 5 31.8l0 61.5c0 2.1-1.7 3.7-3.8 3.7h-19.7c-2-.1-3.5-1.7-3.5-3.7V52.1c0-4.3.4-15-.6-19-.5-6.6-5.7-8.5-11.3-8.5-4.6 0-9.5 3.1-11.5 8.1-2 5-1.8 13.3-1.8 19.4v53c0 2.1-1.7 3.7-3.8 3.7h-19.7c-2-.1-3.5-1.7-3.5-3.7l0-53c0-11.3 1.8-27.9-11.8-27.9-13.8 0-13.3 16.2-13.3 27.9l0 53c0 2.1-1.7 3.7-3.8 3.7l-.6.1zM464 .7c29.3 0 45.1 25.1 45.1 57.1 0 30.9-17.5 55.4-45.1 55.4-28.7 0-44.3-25.1-44.3-56.4 0-31.5 15.8-56.1 44.3-56.1zm.2 20.7c-14.5 0-15.4 19.8-15.4 32.1 0 12.3-.2 38.6 15.2 38.6 15.2 0 15.9-21.2 15.9-34.1 0-8.5-.4-18.7-2.8-26.8-2.1-7-6.3-9.8-12.9-9.8zM549.4 108.8h-19.6c-2-.1-3.5-1.7-3.5-3.7l0-98.6c.2-1.9 1.8-3.4 3.8-3.4h18.2c1.7.1 3.2 1.4 3.5 3.1v15.1h.4c5.5-13.7 13.2-20.2 26.8-20.2 8.9 0 17.5 3.2 23.1 12 5.2 8.1 5.2 21.8 5.2 31.6v60.8c-.2 1.9-1.8 3.3-3.8 3.3h-19.8c-1.8-.1-3.3-1.5-3.5-3.3V51c0-11.1 1.3-27.3-12-27.3-4.7 0-9 3.1-11.1 7.9-2.7 6-3.1 12-3.1 19.4v54.1c0 2.1-1.7 3.7-3.8 3.7h.3zM306.8 62c0 7.7.2 14.2-3.7 21.1-3.2 5.6-8.2 9-13.8 9-7.7 0-12.2-5.8-12.2-14.5 0-17 15.3-20.1 29.7-20.1v4.5zm20.1 48.6c-1.3 1.2-3.3 1.3-4.8.5-6.8-5.6-8-8.2-11.7-13.6-11.2 11.4-19.1 14.8-33.6 14.8-17.2 0-30.5-10.6-30.5-31.8 0-16.6 9-27.9 21.8-33.4 11.1-4.9 26.6-5.8 38.5-7.1v-2.7c0-4.9.4-10.7-2.5-14.9-2.5-3.8-7.4-5.4-11.7-5.4-7.9 0-15 4.1-16.7 12.5-.4 1.9-1.7 3.7-3.6 3.8l-19.2-2.1c-1.7-.4-3.6-1.7-3.1-4.3 4.6-24.5 26.8-31.9 46.6-31.9 10.2 0 23.5 2.7 31.5 10.4 10.2 9.5 9.2 22.2 9.2 36v32.6c0 9.8 4.1 14.1 7.9 19.4 1.3 1.9 1.6 4.2-.1 5.6-4.3 3.6-12 10.2-16.2 14l-.3-.4h.4zM55.5 62c0 7.7.2 14.2-3.7 21.1-3.2 5.6-8.2 9-13.8 9-7.7 0-12.2-5.8-12.2-14.5 0-17 15.3-20.1 29.7-20.1v4.5zm20.1 48.6c-1.3 1.2-3.3 1.3-4.8.5-6.8-5.6-8-8.2-11.7-13.6-11.2 11.4-19.1 14.8-33.6 14.8C8.3 112.3-5 101.7-5 80.5c0-16.6 9-27.9 21.8-33.4 11.1-4.9 26.6-5.8 38.5-7.1v-2.7c0-4.9.4-10.7-2.5-14.9-2.5-3.8-7.4-5.4-11.7-5.4-7.9 0-15 4.1-16.7 12.5-.4 1.9-1.7 3.7-3.6 3.8L1.6 31.2c-1.7-.4-3.6-1.7-3.1-4.3C3.1 2.4 25.3-5 45.1-5c10.2 0 23.5 2.7 31.5 10.4 10.2 9.5 9.2 22.2 9.2 36v32.6c0 9.8 4.1 14.1 7.9 19.4 1.3 1.9 1.6 4.2-.1 5.6-4.3 3.6-12 10.2-16.2 14l-.3-.4h.5z"/>
+        </svg>
+        Comprar
+      </a>
     </div>
     <div class="produto-visual reveal">
       <div class="produto-placeholder">
@@ -543,7 +886,7 @@ footer{
 </section>
 
 <!-- CIÊNCIA -->
-<section class="ciencia" id="ciencia">
+<section class="ciencia" id="ciencia" aria-label="Dados Científicos e Métricas">
   <div class="section-label reveal" style="justify-content:center">Dados &amp; Resultados</div>
   <h2 class="reveal">Números que<br>provam o protocolo.</h2>
   <p class="desc reveal">Cada métrica é real. Cada dado, verificável. Cada resultado, conquistado.</p>
@@ -554,12 +897,67 @@ footer{
     <div class="stat reveal d3"><div class="stat-num">92<span class="stat-unit">rpm</span></div><div class="stat-desc">Cadência</div></div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-logo"><img src="images/LOGO EM 4000X4000 VET.svg" alt="OCIMVIK"/></div>
-  <span class="footer-tagline">Precisão · Performance · Longevidade</span>
-  <span class="footer-right">© 2025 OCIMVIK. Todos os direitos reservados.</span>
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- Coluna 1: Logo e Descrição -->
+    <div class="footer-col col-brand">
+      <div class="footer-logo">
+        <img src="images/LOGO EM 4000X4000 VET.svg" alt="Logo OCIMVIK" />
+      </div>
+      <p class="brand-desc">
+        Desenvolvemos formulações puras baseadas em fisiologia aplicada e evidências científicas para atletas que exigem máxima precisão em sua rotina.
+      </p>
+      <div class="footer-socials">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram da OCIMVIK" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube da OCIMVIK" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna 2: Navegação -->
+    <div class="footer-col">
+      <h3 class="footer-title">Navegação</h3>
+      <ul class="footer-links">
+        <li><a href="#home" aria-label="Ir para a página inicial">Início</a></li>
+        <li><a href="#ciencia" aria-label="Ver seção de ciência e dados">Ciência</a></li>
+        <li><a href="#produtos" aria-label="Conhecer nossa linha de produtos">Produtos</a></li>
+        <li><a href="#manifesto" aria-label="Ler o manifesto da marca">Manifesto</a></li>
+      </ul>
+    </div>
+
+    <!-- Coluna 3: Suporte & Legal -->
+    <div class="footer-col">
+      <h3 class="footer-title">Suporte</h3>
+      <ul class="footer-links">
+        <li><a href="#" aria-label="Política de privacidade">Privacidade</a></li>
+        <li><a href="#" aria-label="Termos de uso do site">Termos de Uso</a></li>
+        <li><a href="#" aria-label="Políticas de envio e devolução">Envio &amp; Devoluções</a></li>
+        <li><a href="#" aria-label="Perguntas frequentes">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Coluna 4: Contato & Infos -->
+    <div class="footer-col">
+      <h3 class="footer-title">Contato</h3>
+      <ul class="footer-links contact-info">
+        <li><span>E-mail:</span> info@ocimvik.com.br</li>
+        <li><span>Atendimento:</span> Seg a Sex, 9h às 18h</li>
+        <li><span>CNPJ:</span> 00.000.000/0001-00</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Linha Inferior -->
+  <div class="footer-bottom">
+    <span class="footer-tagline">Precisão · Performance · Longevidade</span>
+    <span class="footer-right">© 2026 OCIMVIK. Todos os direitos reservados.</span>
+  </div>
 </footer>
 
 <script>
