@@ -278,17 +278,20 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
 }
 .ov-precision p{font-size:.9rem;font-weight:300;line-height:1.75;color:var(--titanio)}
 
-/* 3 — right-center: "Ciência" */
+/* 3 — right-center: "Ciência" (lado direito no desktop) */
 .ov-science{
-  top:50%;left:80px;right:auto;
+  top:50%;right:48px;left:auto;
   width:340px;padding:0;
   transform:translateY(-40%);
+  text-align:right;
 }
 .ov-science.active{transform:translateY(-50%)}
 .ov-science .tag{
   font-size:.65rem;font-weight:700;letter-spacing:.26em;
   text-transform:uppercase;color:var(--oliva);margin-bottom:10px;
+  display:flex;align-items:center;justify-content:flex-end;gap:8px;
 }
+.ov-science .tag::before{content:'';display:block;width:28px;height:1px;background:var(--oliva)}
 .ov-science h2{
   font-family:'Sora',sans-serif;
   font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;
@@ -892,9 +895,24 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
   .canvas-sticky .overlay{padding:0 20px}
   .ov-metrics{flex-wrap:wrap}
   .ov-metric{padding:14px 20px}
-  .ov-science{left:20px;right:auto;width:280px;top:auto;bottom:100px;transform:none}
-  .ov-longevity{left:20px}
-  .ov-precision{left:20px}
+
+  /* Mobile: Precisão — canto inferior esquerdo */
+  .ov-precision{left:20px;right:auto;bottom:80px;top:auto;transform:none;max-width:70vw}
+
+  /* Mobile: Ciência — canto SUPERIOR direito (contraste) */
+  .ov-science{
+    right:20px;left:auto;top:80px;bottom:auto;
+    width:calc(70vw);transform:none;
+    text-align:right;
+  }
+  .ov-science.active{transform:none}
+
+  /* Mobile: Longevidade — canto inferior direito */
+  .ov-longevity{
+    right:20px;left:auto;
+    top:auto;bottom:80px;
+    text-align:right;max-width:70vw;
+  }
   .manifesto-content{flex-direction:column;gap:20px}
   .manifesto-sidebar{flex-direction:row;width:100%;border-left:none;border-top:1px solid rgba(140,144,145,.2);padding:20px 0 0 0}
   .manifesto-sidebar::before,.manifesto-sidebar::after,.manifesto-sidebar .dot-mid{top:-3px;left:0}
