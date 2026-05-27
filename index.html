@@ -1021,8 +1021,8 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
       <p class="sub">O que move a OCIMVIK</p>
     </div>
     
-    <div class="manifesto-content reveal">
-      <div class="manifesto-sidebar">
+    <div class="manifesto-content">
+      <div class="manifesto-sidebar reveal">
         <span class="vertical-text">LONGEVIDADE</span>
         <div class="dot-mid"></div>
         <span class="vertical-text">CONSISTÊNCIA</span>
@@ -1030,12 +1030,12 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
       </div>
       
       <div class="manifesto-text">
-        <p>A performance humana<br>não se constrói no excesso.</p>
-        <p>Ela se constrói<br>na precisão.<br>No controle.<br>Na consistência.<br>Na ciência aplicada à rotina.</p>
-        <p>A OCIMVIK nasce para atletas<br>amadores de alta exigência que<br>não treinam por impulso, mas<br>por disciplina.</p>
-        <p>Para quem busca vantagem marginal,<br>recuperação inteligente e<br>longevidade esportiva.</p>
-        <p>Menos hype.<br>Mais critério.<br>Menos promessa.<br>Mais protocolo.</p>
-        <p class="highlight">OCIMVIK. Performance Humana com Precisão.</p>
+        <p class="reveal d1">A performance humana<br>não se constrói no excesso.</p>
+        <p class="reveal d2">Ela se constrói<br>na precisão.<br>No controle.<br>Na consistência.<br>Na ciência aplicada à rotina.</p>
+        <p class="reveal d3">A OCIMVIK nasce para atletas<br>amadores de alta exigência que<br>não treinam por impulso, mas<br>por disciplina.</p>
+        <p class="reveal d4">Para quem busca vantagem marginal,<br>recuperação inteligente e<br>longevidade esportiva.</p>
+        <p class="reveal d4" style="transition-delay: 0.75s">Menos hype.<br>Mais critério.<br>Menos promessa.<br>Mais protocolo.</p>
+        <p class="highlight reveal d4" style="transition-delay: 0.9s">OCIMVIK. Performance Humana com Precisão.</p>
       </div>
     </div>
   </div>
@@ -1078,10 +1078,10 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
   <h2 class="reveal">Números que<br>provam o protocolo.</h2>
   <p class="desc reveal">Cada métrica é real. Cada dado, verificável. Cada resultado, conquistado.</p>
   <div class="stats-row">
-    <div class="stat reveal"><div class="stat-num">92<span class="stat-unit">%</span></div><div class="stat-desc">Recovery Score</div></div>
-    <div class="stat reveal d1"><div class="stat-num">Z3</div><div class="stat-desc">Zona de Treino</div></div>
-    <div class="stat reveal d2"><div class="stat-num">45<span class="stat-unit">min</span></div><div class="stat-desc">Tempo Médio</div></div>
-    <div class="stat reveal d3"><div class="stat-num">92<span class="stat-unit">rpm</span></div><div class="stat-desc">Cadência</div></div>
+    <div class="stat reveal"><div class="stat-num"><span class="counter" data-target="92">0</span><span class="stat-unit">%</span></div><div class="stat-desc">Recovery Score</div></div>
+    <div class="stat reveal d1"><div class="stat-num">Z<span class="counter" data-target="3">0</span></div><div class="stat-desc">Zona de Treino</div></div>
+    <div class="stat reveal d2"><div class="stat-num"><span class="counter" data-target="45">0</span><span class="stat-unit">min</span></div><div class="stat-desc">Tempo Médio</div></div>
+    <div class="stat reveal d3"><div class="stat-num"><span class="counter" data-target="92">0</span><span class="stat-unit">rpm</span></div><div class="stat-desc">Cadência</div></div>
   </div>
 </section>
 
@@ -1327,6 +1327,53 @@ contactForm.addEventListener('submit', (e) => {
   // Abre o WhatsApp em uma nova aba
   window.open(whatsappUrl, '_blank');
 });
+
+// ══════════════════════════════════════════
+// CONTADORES DE MÉTRICAS (COUNT UP)
+// ══════════════════════════════════════════
+const counters = document.querySelectorAll('.counter');
+const statsSection = document.getElementById('ciencia');
+
+const easeOutQuad = (t) => t * (2 - t);
+
+const animateCounter = (el) => {
+  const target = parseInt(el.getAttribute('data-target'), 10);
+  const start = 0;
+  const duration = 1500; // 1.5s
+  let startTime = null;
+
+  const step = (timestamp) => {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const easedProgress = easeOutQuad(progress);
+    
+    el.textContent = Math.floor(start + easedProgress * (target - start));
+    
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      el.textContent = target; // Garante o valor final exato
+    }
+  };
+  
+  window.requestAnimationFrame(step);
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      counters.forEach(counter => {
+        // Pequeno atraso para sincronizar com a animação de reveal do card pai
+        setTimeout(() => animateCounter(counter), 200);
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+if (statsSection) {
+  statsObserver.observe(statsSection);
+}
 
 // ══════════════════════════════════════════
 // REVEAL ON SCROLL (sections below)
