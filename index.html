@@ -506,6 +506,179 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
 .stat-unit{color:var(--oliva);font-size:1.5rem}
 .stat-desc{font-size:.75rem;color:var(--titanio);margin-top:8px;letter-spacing:.1em;text-transform:uppercase}
 
+/* ── CONTATO ── */
+.contato-section {
+  padding: 120px 48px;
+  background: radial-gradient(ellipse at 40% 50%, #151a14 0%, var(--preto) 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(140, 144, 145, 0.05);
+}
+.contato-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: flex-start;
+}
+.contato-copy .section-label {
+  margin-bottom: 14px;
+}
+.contato-copy h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.05;
+  background: linear-gradient(160deg, var(--branco) 40%, var(--titanio) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 18px;
+}
+.contato-copy .desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--titanio);
+  margin-bottom: 40px;
+}
+.contato-info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contato-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.contato-info-icon {
+  color: var(--oliva);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.contato-info-text h4 {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--branco);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.contato-info-text p {
+  font-size: 0.85rem;
+  color: var(--titanio);
+  line-height: 1.5;
+}
+
+/* Formulário Card */
+.contato-card {
+  background: rgba(28, 31, 34, 0.4);
+  border: 1px solid rgba(140, 144, 145, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 6px;
+  padding: 48px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.form-group label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--titanio);
+  transition: color 0.3s;
+}
+.form-control {
+  background: rgba(9, 10, 9, 0.5);
+  border: 1px solid rgba(140, 144, 145, 0.15);
+  border-radius: 4px;
+  padding: 14px 16px;
+  color: var(--branco);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-control::placeholder {
+  color: rgba(140, 144, 145, 0.4);
+}
+.form-control:focus {
+  border-color: var(--oliva);
+  box-shadow: 0 0 10px rgba(92, 110, 78, 0.3);
+  outline: none;
+}
+.form-group:focus-within label {
+  color: var(--branco);
+}
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--oliva);
+  color: var(--branco);
+  border: 1px solid transparent;
+  padding: 16px 40px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-top: 8px;
+}
+.btn-submit:hover {
+  background: var(--branco);
+  color: var(--carbon);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(92, 110, 78, 0.3);
+}
+.btn-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+}
+.btn-submit:hover::before {
+  animation: shine 1.2s ease-in-out infinite;
+}
+.whatsapp-btn-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn-submit:hover .whatsapp-btn-icon {
+  transform: scale(1.15);
+}
+
 /* ── FOOTER ── */
 .footer-section {
   border-top: 1px solid rgba(140, 144, 145, 0.08);
@@ -516,7 +689,7 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1.2fr 1.2fr;
   gap: 64px;
   margin-bottom: 64px;
 }
@@ -690,7 +863,9 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
 @media(max-width:768px){
   nav{padding:14px 20px}.nav-links{display:none}
   .produto-inner{grid-template-columns:1fr;gap:40px}
-  .produto,.ciencia,.manifesto-section{padding:80px 20px}
+  .produto,.ciencia,.manifesto-section,.contato-section{padding:80px 20px}
+  .contato-inner{grid-template-columns:1fr;gap:48px}
+  .contato-card{padding:32px 24px}
   .footer-section { padding: 60px 20px 32px; }
   .footer-container {
     grid-template-columns: 1fr;
@@ -728,6 +903,7 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
     <li><a href="#ciencia">Ciência</a></li>
     <li><a href="#produtos">Produtos</a></li>
     <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#contato">Contato</a></li>
   </ul>
   <a href="https://www.amazon.com.br" target="_blank" class="nav-cta" aria-label="Comprar suplementos OCIMVIK na Amazon">
     <svg class="amazon-icon" viewBox="0 0 602 182" width="48" height="14" xmlns="http://www.w3.org/2000/svg">
@@ -897,6 +1073,65 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
     <div class="stat reveal d3"><div class="stat-num">92<span class="stat-unit">rpm</span></div><div class="stat-desc">Cadência</div></div>
   </div>
 </section>
+
+<!-- CONTATO -->
+<section class="contato-section" id="contato" aria-label="Seção de Contato">
+  <div class="contato-inner">
+    <div class="contato-copy">
+      <div class="section-label reveal">Contato</div>
+      <h2 class="reveal">Fale com<br>nossa equipe.</h2>
+      <p class="desc reveal">Tem alguma dúvida sobre nosso protocolo científico ou deseja falar com a OCIMVIK? Preencha o formulário e inicie sua conversa diretamente em nosso canal oficial.</p>
+      
+      <ul class="contato-info-list reveal d1">
+        <li class="contato-info-item">
+          <div class="contato-info-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div class="contato-info-text">
+            <h4>E-mail Oficial</h4>
+            <p>info@ocimvik.com.br</p>
+          </div>
+        </li>
+        <li class="contato-info-item">
+          <div class="contato-info-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="contato-info-text">
+            <h4>Atendimento</h4>
+            <p>Segunda a Sexta, das 9h às 18h</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="contato-card reveal d2">
+      <form id="contact-form" class="contato-form">
+        <div class="form-group">
+          <label for="form-nome">Nome Completo</label>
+          <input type="text" id="form-nome" class="form-control" placeholder="Seu nome" required />
+        </div>
+        <div class="form-group">
+          <label for="form-email">E-mail</label>
+          <input type="email" id="form-email" class="form-control" placeholder="exemplo@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="form-tel">Telefone / Celular</label>
+          <input type="tel" id="form-tel" class="form-control" placeholder="(00) 00000-0000" required />
+        </div>
+        <div class="form-group">
+          <label for="form-assunto">Assunto</label>
+          <input type="text" id="form-assunto" class="form-control" placeholder="Ex: Dúvida sobre dosagem, parcerias..." required />
+        </div>
+        <button type="submit" class="btn-submit" aria-label="Enviar mensagem via WhatsApp">
+          <svg class="whatsapp-btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+          </svg>
+          Enviar via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
 </main>
 
 <!-- FOOTER -->
@@ -928,6 +1163,7 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
         <li><a href="#ciencia" aria-label="Ver seção de ciência e dados">Ciência</a></li>
         <li><a href="#produtos" aria-label="Conhecer nossa linha de produtos">Produtos</a></li>
         <li><a href="#manifesto" aria-label="Ler o manifesto da marca">Manifesto</a></li>
+        <li><a href="#contato" aria-label="Fale conosco via formulário de contato">Contato</a></li>
       </ul>
     </div>
 
@@ -939,16 +1175,6 @@ nav.hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
         <li><a href="#" aria-label="Termos de uso do site">Termos de Uso</a></li>
         <li><a href="#" aria-label="Políticas de envio e devolução">Envio &amp; Devoluções</a></li>
         <li><a href="#" aria-label="Perguntas frequentes">FAQ</a></li>
-      </ul>
-    </div>
-
-    <!-- Coluna 4: Contato & Infos -->
-    <div class="footer-col">
-      <h3 class="footer-title">Contato</h3>
-      <ul class="footer-links contact-info">
-        <li><span>E-mail:</span> info@ocimvik.com.br</li>
-        <li><span>Atendimento:</span> Seg a Sex, 9h às 18h</li>
-        <li><span>CNPJ:</span> 00.000.000/0001-00</li>
       </ul>
     </div>
   </div>
@@ -1035,6 +1261,56 @@ for(let i = 1; i <= TOTAL; i++){
 
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+
+// ══════════════════════════════════════════
+// FORMULÁRIO DE CONTATO & WHATSAPP
+// ══════════════════════════════════════════
+const telInput = document.getElementById('form-tel');
+const contactForm = document.getElementById('contact-form');
+
+// Máscara de Telefone (Filtra não-números e formata)
+telInput.addEventListener('input', (e) => {
+  let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for dígito
+  if (value.length > 11) value = value.slice(0, 11); // Limita em 11 dígitos
+  
+  if (value.length > 10) {
+    // Formato celular: (XX) XXXXX-XXXX
+    e.target.value = `(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7)}`;
+  } else if (value.length > 6) {
+    // Formato telefone fixo intermediário
+    e.target.value = `(${value.slice(0,2)}) ${value.slice(2,6)}-${value.slice(6)}`;
+  } else if (value.length > 2) {
+    e.target.value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+  } else if (value.length > 0) {
+    e.target.value = `(${value}`;
+  } else {
+    e.target.value = '';
+  }
+});
+
+// Envio do formulário
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const nome = document.getElementById('form-nome').value.trim();
+  const email = document.getElementById('form-email').value.trim();
+  const tel = telInput.value.trim();
+  const assunto = document.getElementById('form-assunto').value.trim();
+  
+  // Estrutura a mensagem com marcações em negrito do WhatsApp
+  const mensagem = `*Novo Contato - OCIMVIK*\n\n` +
+                   `*Nome:* ${nome}\n` +
+                   `*E-mail:* ${email}\n` +
+                   `*Telefone:* ${tel}\n` +
+                   `*Assunto:* ${assunto}`;
+  
+  // Codifica a mensagem para a URL do WhatsApp
+  const encodedText = encodeURIComponent(mensagem);
+  const whatsappUrl = `https://wa.me/5512991024047?text=${encodedText}`;
+  
+  // Abre o WhatsApp em uma nova aba
+  window.open(whatsappUrl, '_blank');
+});
 
 // ══════════════════════════════════════════
 // REVEAL ON SCROLL (sections below)
