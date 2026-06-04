@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Laudo de Pureza | OCIMVIK</title>
+<meta name="description" content="Verifique o laudo de pureza e análise laboratorial da Creatina Monohidratada OCIMVIK."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="OCIMVIK"/>
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="images/LOGO EM 4000X4000 VET.svg"/>
+<link rel="apple-touch-icon" href="images/LOGO EM 4000X4000 VET.svg"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --preto:#0F1110;
+  --titanio:#8C9091;
+  --oliva:#3F4A34;
+  --grafite:#1C1F22;
+  --branco:#F4F3EF;
+  --cinza:#C8C9C7;
+  --carbon:#090A09;
+  --success: #4E8C5C;
+}
+html{scroll-behavior:smooth}
+body{background:var(--preto);color:var(--branco);font-family:'Inter',sans-serif;overflow-x:hidden}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 48px;
+  background:rgba(15,17,16,0.82);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(140,144,145,0.1);
+}
+.nav-logo{display:flex;align-items:center;height:42px;cursor:pointer}
+.nav-logo img{height:46px;width:auto;object-fit:contain;margin-top:3px;opacity:0.85;transition:opacity .3s ease,filter .3s ease}
+.nav-logo:hover img{opacity:1;filter:drop-shadow(0 0 8px rgba(92,110,78,0.6))}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:rgba(244,243,239,.6);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .25s}
+.nav-links a:hover{color:var(--branco)}
+.nav-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--branco);
+  border: 1px solid var(--oliva);
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.nav-cta:hover{
+  background: rgba(92, 110, 78, 0.15);
+  border-color: var(--branco);
+  color: var(--branco);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Light sweep effect */
+.nav-cta::before, .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+}
+.nav-cta:hover::before, .btn-primary:hover::before {
+  animation: shine 1.2s ease-in-out infinite;
+}
+@keyframes shine {
+  100% {
+    left: 200%;
+  }
+}
+
+/* LAUDO CONTAINER */
+.laudo-section {
+  padding: 140px 48px 100px;
+  min-height: calc(100vh - 180px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(ellipse at 50% 30%, #171d15 0%, var(--preto) 70%);
+}
+.laudo-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.laudo-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+.section-label {
+  font-size:.7rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--oliva);margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:12px;
+}
+.section-label::before, .section-label::after{content:'';display:block;width:28px;height:1px;background:var(--oliva)}
+
+.laudo-header h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  background: linear-gradient(160deg, var(--branco) 40%, var(--titanio) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+.laudo-header p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--titanio);
+}
+
+/* CONTENT GRID */
+.laudo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* LEFT COLUMN - INFO CARD */
+.info-card {
+  background: rgba(28, 31, 34, 0.4);
+  border: 1px solid rgba(140, 144, 145, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 6px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.info-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--branco);
+  border-bottom: 1px solid rgba(140, 144, 145, 0.1);
+  padding-bottom: 16px;
+}
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.info-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--titanio);
+}
+.info-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--branco);
+}
+.info-value.mono {
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.05em;
+  color: var(--branco);
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--oliva);
+  color: var(--branco);
+  border: 1px solid transparent;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(63, 74, 52, 0.3);
+}
+.btn-primary:hover {
+  background: var(--branco);
+  color: var(--preto);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+.btn-primary svg {
+  transition: transform 0.3s ease;
+}
+.btn-primary:hover svg {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* RIGHT COLUMN - TABLE CARD */
+.table-card {
+  background: rgba(28, 31, 34, 0.2);
+  border: 1px solid rgba(140, 144, 145, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 6px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.table-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--branco);
+  margin-bottom: 24px;
+}
+.table-wrapper {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+th, td {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(140, 144, 145, 0.08);
+  font-size: 0.88rem;
+}
+th {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--titanio);
+  padding-bottom: 20px;
+}
+td {
+  color: rgba(244, 243, 239, 0.9);
+  font-weight: 400;
+}
+tr:hover td {
+  background: rgba(255, 255, 255, 0.01);
+}
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(78, 140, 92, 0.15);
+  color: #72c085;
+  border: 1px solid rgba(78, 140, 92, 0.25);
+}
+.badge-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #72c085;
+  box-shadow: 0 0 8px #72c085;
+}
+
+.table-footnote {
+  margin-top: 24px;
+  font-size: 0.75rem;
+  color: var(--titanio);
+  line-height: 1.5;
+}
+
+/* PDF CONTAINER CARD */
+.pdf-container-card {
+  background: rgba(28, 31, 34, 0.4);
+  border: 1px solid rgba(140, 144, 145, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 6px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  gap: 24px;
+}
+.pdf-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--branco);
+  border-bottom: 1px solid rgba(140, 144, 145, 0.1);
+  padding-bottom: 16px;
+}
+.pdf-frame-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(140, 144, 145, 0.2);
+}
+.pdf-fallback-text {
+  font-size: 0.85rem;
+  color: var(--titanio);
+  line-height: 1.5;
+  text-align: center;
+}
+.pdf-fallback-text a {
+  color: var(--branco);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.25s;
+}
+.pdf-fallback-text a:hover {
+  color: var(--oliva);
+}
+
+/* FOOTER */
+.footer-section {
+  border-top: 1px solid rgba(140, 144, 145, 0.08);
+  background-color: var(--carbon);
+  padding: 60px 48px 48px;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+.footer-logo img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
+  margin-top: 2px;
+  opacity: 0.7;
+  transition: opacity .3s ease, filter .3s ease;
+  transform-origin: left center;
+}
+.footer-logo:hover img {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(92,110,78,0.6));
+}
+.footer-nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.footer-nav-links a {
+  color: rgba(244, 243, 239, .6);
+  text-decoration: none;
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: color .25s;
+}
+.footer-nav-links a:hover {
+  color: var(--branco);
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(140, 144, 145, 0.06);
+  margin-top: 32px;
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--titanio);
+}
+.footer-right {
+  font-size: 0.72rem;
+  color: rgba(200, 201, 199, 0.25);
+  letter-spacing: 0.06em;
+}
+
+/* ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+.d1 { animation-delay: 0.15s; }
+.d2 { animation-delay: 0.3s; }
+.d3 { animation-delay: 0.45s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:992px) {
+  .laudo-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+@media(max-width:768px) {
+  nav {
+    padding: 14px 20px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .footer-nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .laudo-section {
+    padding: 110px 20px 60px;
+  }
+  .info-card, .table-card, .pdf-container-card {
+    padding: 24px;
+  }
+  .pdf-frame-wrapper iframe {
+    height: 480px !important;
+  }
+  th, td {
+    padding: 12px 14px;
+    font-size: 0.82rem;
+  }
+  .footer-section {
+    padding: 40px 20px 32px;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 12px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="window.location.href='index.html'">
+    <img src="images/Logo.png" alt="Logotipo OCIMVIK"/>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Voltar para a Home</a></li>
+  </ul>
+  <a href="#pdf-viewer" class="nav-cta" onclick="showPdfViewer(event)" aria-label="Ir para visualização do laudo">
+    Ver Laudo
+  </a>
+</nav>
+
+<main>
+  <!-- LAUDO SECTION -->
+  <section class="laudo-section" aria-label="Relatório de Análise e Pureza">
+    <div class="laudo-container">
+      
+      <!-- HEADER -->
+      <div class="laudo-header reveal">
+        <div class="section-label">Controle de Qualidade</div>
+        <h1>Laudo de Análise</h1>
+        <p>Transparência total e validação científica. Abaixo constam os resultados laboratoriais detalhados do lote atual de nossa Creatina Monohidratada.</p>
+      </div>
+
+      <!-- GRID -->
+      <div class="laudo-grid">
+        
+        <!-- LEFT COLUMN: GENERAL INFO -->
+        <div class="info-card reveal d1">
+          <h2 class="info-title">Identificação do Lote</h2>
+          
+          <ul class="info-list">
+            <li class="info-item">
+              <span class="info-label">Produto</span>
+              <span class="info-value">Creatina Monohydrate (100% Pura)</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Lote</span>
+              <span class="info-value mono">001130526</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Fabricação</span>
+              <span class="info-value">Maio / 2026</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Validade</span>
+              <span class="info-value">Maio / 2028</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Método de Análise</span>
+              <span class="info-value">Cromatografia Líquida (HPLC)</span>
+            </li>
+          </ul>
+
+          <a href="#pdf-viewer" class="btn-primary" onclick="showPdfViewer(event)" aria-label="Visualizar o laudo original em formato PDF">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            Visualizar Laudo Oficial
+          </a>
+        </div>
+
+        <!-- RIGHT COLUMN: RESULTS TABLE -->
+        <div class="table-card reveal d2">
+          <h2 class="table-title">Especificações e Resultados</h2>
+          
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ensaio / Parâmetro</th>
+                  <th>Especificação</th>
+                  <th>Resultado Obtido</th>
+                  <th>Situação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aspecto</td>
+                  <td>Pó cristalino fino</td>
+                  <td>Conforme</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>Cor</td>
+                  <td>Branco</td>
+                  <td>Conforme</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>Teor (Pureza HPLC)</td>
+                  <td>&ge; 99,50%</td>
+                  <td><strong>99,82%</strong></td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>Perda por Secagem</td>
+                  <td>&le; 12,0%</td>
+                  <td>0,08%</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>Resíduo de Ignição</td>
+                  <td>&le; 0,10%</td>
+                  <td>0,04%</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>Metais Pesados (Pb)</td>
+                  <td>&le; 10 ppm</td>
+                  <td>&lt; 2 ppm</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>Arsênio (As)</td>
+                  <td>&le; 1 ppm</td>
+                  <td>Não Detectado</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>Contagem Bacteriana Total</td>
+                  <td>&le; 1.000 ufc/g</td>
+                  <td>&lt; 10 ufc/g</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>Leveduras e Fungos</td>
+                  <td>&le; 100 ufc/g</td>
+                  <td>Ausente</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+                <tr>
+                  <td>E. Coli / Salmonella</td>
+                  <td>Ausente</td>
+                  <td>Ausente</td>
+                  <td><span class="badge-status">Aprovado</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="table-footnote">* Os testes microbiológicos e físico-químicos são realizados para cada lote de matéria-prima importada antes do envase, garantindo conformidade total com os regulamentos da ANVISA e padrões internacionais de pureza.</p>
+      </div> <!-- Closes table-card -->
+    </div> <!-- Closes laudo-grid -->
+
+    <!-- PDF VIEW SECTION -->
+    <div id="pdf-viewer" class="pdf-container-card reveal d3">
+        <h2 class="pdf-title">Visualização do Laudo Oficial</h2>
+        <div class="pdf-frame-wrapper">
+          <iframe src="Laudos/Creatina%20-%20Lote%20-%20001130526.pdf#toolbar=0" width="100%" height="750px" style="border: none; display: block;"></iframe>
+        </div>
+        <p class="pdf-fallback-text">
+          O documento original acima é disponibilizado estritamente para visualização e consulta.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer-section">
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img src="images/Logo.png" alt="Logo OCIMVIK" />
+      </div>
+    </div>
+    <ul class="footer-nav-links" style="margin-bottom: 0;">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html#ciencia">Ciência</a></li>
+      <li><a href="index.html#produtos">Produtos</a></li>
+      <li><a href="index.html#manifesto">Manifesto</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-tagline">Precisão · Performance · Longevidade</span>
+    <span class="footer-right">© 2026 OCIMVIK. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script>
+function showPdfViewer(event) {
+  if (event) event.preventDefault();
+  const viewer = document.getElementById('pdf-viewer');
+  if (viewer) {
+    viewer.style.display = 'flex';
+    // Trigger reflow to restart animation if needed
+    viewer.offsetHeight;
+    viewer.classList.add('visible');
+    viewer.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+</script>
+
+</body>
+</html>
