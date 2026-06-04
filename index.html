@@ -900,41 +900,19 @@
       justify-content: center
     }
 
-    .produto-placeholder {
-      width: 320px;
-      height: 460px;
-      background: linear-gradient(160deg, var(--grafite) 0%, var(--carbon) 100%);
-      border: 1px solid rgba(140, 144, 145, .1);
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .produto-placeholder img {
-      height: 153px;
-      width: auto;
+    .produto-mockup {
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      max-height: 920px;
       object-fit: contain;
-      margin-top: -30px;
-      margin-bottom: -33px;
-      opacity: 0.7;
-      transition: opacity .3s ease, filter .3s ease
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.6));
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s ease;
     }
 
-    .produto-placeholder:hover img {
-      opacity: 0.95;
-      filter: drop-shadow(0 0 10px rgba(92, 110, 78, 0.6))
-    }
-
-    .produto-placeholder span {
-      font-family: 'Sora', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--titanio);
+    .produto-mockup:hover {
+      transform: translateY(-8px) scale(1.02);
+      filter: drop-shadow(0 25px 45px rgba(92, 110, 78, 0.35)) drop-shadow(0 15px 35px rgba(0, 0, 0, 0.6));
     }
 
     /* ── CIÊNCIA STATS ── */
@@ -1776,10 +1754,7 @@
           </a>
         </div>
         <div class="produto-visual reveal">
-          <div class="produto-placeholder">
-            <img src="images/LOGO EM 4000X4000 VET.svg" alt="OCIMVIK" />
-            <span>Creatine</span>
-          </div>
+          <img src="images/creatina-mock.png" alt="Creatina Monohidratada OCIMVIK" class="produto-mockup" />
         </div>
       </div>
     </section>
