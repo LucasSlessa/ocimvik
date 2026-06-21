@@ -193,26 +193,24 @@
       overflow: hidden;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding-left: 8vw;
+      justify-content: center;
+      padding: 0 24px;
     }
 
     .hero-left-bg {
       position: absolute;
       inset: 0;
-      background: url('images/img1.png') right center/contain no-repeat;
-      opacity: 0.6;
+      background: url('images/img1.png') center/cover no-repeat;
+      opacity: 0.35;
       pointer-events: none;
       z-index: 1;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 30%, black 70%);
-      mask-image: linear-gradient(to right, transparent 0%, transparent 30%, black 70%);
     }
 
     .hero-left::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, #0c0d0c 0%, #0c0d0c 30%, transparent 80%);
+      background: radial-gradient(circle at center, rgba(12,13,12,0.1) 0%, #0c0d0c 85%);
       z-index: 2;
       pointer-events: none;
     }
@@ -220,14 +218,18 @@
     .hero-left-content {
       position: relative;
       z-index: 10;
-      max-width: 600px;
+      max-width: 800px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .hero-left-eyebrow {
       font-family: 'Sora', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.25em;
       color: var(--oliva);
       margin-bottom: 24px;
       text-transform: uppercase;
@@ -235,73 +237,76 @@
 
     .hero-left-title {
       font-family: 'Sora', sans-serif;
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      font-weight: 700;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
       color: var(--branco);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
     }
 
     .hero-left-desc {
       font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: rgba(244, 243, 239, 0.8);
-      line-height: 1.6;
-      margin-bottom: 48px;
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(244, 243, 239, 0.7);
+      line-height: 1.7;
+      max-width: 500px;
+      margin-bottom: 40px;
     }
 
     .hero-left-btn {
       display: inline-block;
       padding: 14px 32px;
-      border: 1px solid rgba(244, 243, 239, 0.5);
+      border: 1px solid rgba(244, 243, 239, 0.3);
       border-radius: 4px;
       color: var(--branco);
       font-family: 'Sora', sans-serif;
       font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(4px);
     }
 
     .hero-left-btn:hover {
       background: var(--branco);
       color: var(--preto);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(255,255,255,0.1);
     }
 
     @media (max-width: 768px) {
       .hero-left {
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: 20px;
+        padding-right: 20px;
         align-items: center;
         padding-bottom: 0;
       }
 
       .hero-left-content {
-        margin-top: 15vh;
+        margin-top: 5vh;
       }
 
       .hero-left-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
 
       .hero-left-desc {
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin-bottom: 32px;
       }
 
       .hero-left-bg {
         background: url('images/img1.png') center/cover no-repeat;
-        -webkit-mask-image: none;
-        mask-image: none;
         opacity: 0.4;
       }
 
       .hero-left::before {
-        background: linear-gradient(to top, #0c0d0c 0%, rgba(12, 13, 12, 0.4) 50%, rgba(12, 13, 12, 0.8) 100%);
+        background: radial-gradient(circle at center, rgba(12,13,12,0.2) 0%, #0c0d0c 90%);
       }
 
       #loco-canvas {
@@ -1575,6 +1580,7 @@
       <li><a href="#ciencia">Ciência</a></li>
       <li><a href="#produtos">Produtos</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
+      <li><a href="#laudo-carousel">Laudo</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
     <a href="https://www.amazon.com.br" target="_blank" class="nav-cta"
@@ -1853,6 +1859,52 @@
         </div>
       </div>
     </section>
+
+    <!-- LAUDO CAROUSEL SECTION -->
+    <section class="laudo-carousel-section" id="laudo-carousel">
+      <div class="laudo-carousel-container reveal d1">
+        <div class="section-label">Transparência</div>
+        <h2>Laudo de Pureza</h2>
+        <p class="carousel-desc">Confira os resultados laboratoriais que comprovam a pureza e a qualidade da nossa Creatina.</p>
+        
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev-btn" aria-label="Imagem anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          
+          <div class="carousel-track-container">
+            <ul class="carousel-track">
+              <li class="carousel-slide current-slide"><img src="Laudos/PDF1_AVIF1.avif" alt="Laudo Página 1" loading="lazy"></li>
+              <li class="carousel-slide"><img src="Laudos/PDF1_AVIF2.avif" alt="Laudo Página 2" loading="lazy"></li>
+              <li class="carousel-slide"><img src="Laudos/PDF1_AVIF3.avif" alt="Laudo Página 3" loading="lazy"></li>
+              <li class="carousel-slide"><img src="Laudos/PDF1_AVIF4.avif" alt="Laudo Página 4" loading="lazy"></li>
+              <li class="carousel-slide"><img src="Laudos/PDF1_AVIF5.avif" alt="Laudo Página 5" loading="lazy"></li>
+              <li class="carousel-slide"><img src="Laudos/PDF1_AVIF6.avif" alt="Laudo Página 6" loading="lazy"></li>
+              <li class="carousel-slide"><img src="Laudos/PDF1_AVIF7.avif" alt="Laudo Página 7" loading="lazy"></li>
+              <li class="carousel-slide"><img src="Laudos/PDF1_AVIF8.avif" alt="Laudo Página 8" loading="lazy"></li>
+              <li class="carousel-slide"><img src="Laudos/PDF1_AVIF9.avif" alt="Laudo Página 9" loading="lazy"></li>
+            </ul>
+          </div>
+          
+          <button class="carousel-btn next-btn" aria-label="Próxima imagem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        
+        <div class="carousel-nav">
+          <button class="carousel-indicator current-indicator" aria-label="Ir para a imagem 1"></button>
+          <button class="carousel-indicator" aria-label="Ir para a imagem 2"></button>
+          <button class="carousel-indicator" aria-label="Ir para a imagem 3"></button>
+          <button class="carousel-indicator" aria-label="Ir para a imagem 4"></button>
+          <button class="carousel-indicator" aria-label="Ir para a imagem 5"></button>
+          <button class="carousel-indicator" aria-label="Ir para a imagem 6"></button>
+          <button class="carousel-indicator" aria-label="Ir para a imagem 7"></button>
+          <button class="carousel-indicator" aria-label="Ir para a imagem 8"></button>
+          <button class="carousel-indicator" aria-label="Ir para a imagem 9"></button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -2110,7 +2162,265 @@
       });
     }, { threshold: 0.12 });
     revealEls.forEach(el => obs.observe(el));
+
+    // ══════════════════════════════════════════
+    // LAUDO CAROUSEL
+    // ══════════════════════════════════════════
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector('.next-btn');
+      const prevButton = document.querySelector('.prev-btn');
+      const dotsNav = document.querySelector('.carousel-nav');
+      const dots = Array.from(dotsNav.children);
+      let currentSlideIndex = 0;
+
+      const updateCarousel = (index) => {
+        track.style.transform = 'translateX(-' + index * 100 + '%)';
+        dots.forEach(dot => dot.classList.remove('current-indicator'));
+        dots[index].classList.add('current-indicator');
+      };
+
+      nextButton.addEventListener('click', e => {
+        currentSlideIndex = (currentSlideIndex === slides.length - 1) ? 0 : currentSlideIndex + 1;
+        updateCarousel(currentSlideIndex);
+      });
+
+      prevButton.addEventListener('click', e => {
+        currentSlideIndex = (currentSlideIndex === 0) ? slides.length - 1 : currentSlideIndex - 1;
+        updateCarousel(currentSlideIndex);
+      });
+
+      dotsNav.addEventListener('click', e => {
+        const targetDot = e.target.closest('button');
+        if (!targetDot) return;
+        const targetIndex = dots.findIndex(dot => dot === targetDot);
+        currentSlideIndex = targetIndex;
+        updateCarousel(currentSlideIndex);
+      });
+    }
   </script>
+<style>
+/* LAUDO CAROUSEL SECTION */
+.laudo-carousel-section {
+  padding: 100px 48px;
+  background-color: #0c0d0c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.laudo-carousel-container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+.laudo-carousel-container h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--branco);
+  margin-bottom: 16px;
+}
+.carousel-desc {
+  font-size: 1rem;
+  color: var(--titanio);
+  margin-bottom: 40px;
+}
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 31, 34, 0.4);
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(140, 144, 145, 0.1);
+}
+.carousel-track-container {
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+.carousel-track {
+  display: flex;
+  list-style: none;
+  transition: transform 0.4s ease-in-out;
+}
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.carousel-slide img {
+  width: 100%;
+  max-height: 800px;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 17, 16, 0.8);
+  border: 1px solid rgba(140, 144, 145, 0.2);
+  color: var(--branco);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.carousel-btn:hover {
+  background: var(--oliva);
+  border-color: var(--oliva);
+}
+.carousel-btn svg {
+  width: 24px;
+  height: 24px;
+}
+.prev-btn { left: -24px; }
+.next-btn { right: -24px; }
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(140, 144, 145, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.carousel-indicator.current-indicator {
+  background: var(--oliva);
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .carousel-wrapper { padding: 20px 10px; }
+  .prev-btn { left: 10px; z-index: 100; }
+  .next-btn { right: 10px; z-index: 100; }
+  .laudo-carousel-section { padding: 60px 20px; }
+}
+
+/* SELO DE QUALIDADE */
+.quality-seal {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 110px;
+  height: 110px;
+  z-index: 900;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.quality-seal:hover {
+  transform: scale(1.05);
+}
+
+.seal-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(15, 17, 16, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(63, 74, 52, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 15px rgba(63, 74, 52, 0.2);
+}
+
+.seal-text-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotateText 15s linear infinite;
+}
+
+.seal-text-svg text {
+  font-family: 'Sora', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  fill: #aab1a8;
+  text-transform: uppercase;
+}
+
+.seal-icon {
+  position: absolute;
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(63,74,52,0.9), rgba(28,31,34,0.9));
+  border: 1px solid rgba(244,243,239,0.15);
+  box-shadow: inset 0 2px 10px rgba(255,255,255,0.05);
+}
+
+@keyframes rotateText {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .quality-seal {
+    bottom: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+  }
+  .seal-text-svg text {
+    font-size: 15px;
+  }
+  .seal-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .seal-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+</style>
+
+<!-- SELO DE QUALIDADE GARANTIDA -->
+<div class="quality-seal" onclick="window.location.href='laudo.html'" aria-label="Ver Laudo de Qualidade">
+  <div class="seal-inner">
+    <svg viewBox="0 0 100 100" class="seal-text-svg">
+      <defs>
+        <path id="circlePath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" />
+      </defs>
+      <text>
+        <textPath href="#circlePath" startOffset="0%" textLength="215">
+          • QUALIDADE • GARANTIDA • 100% PUREZA
+        </textPath>
+      </text>
+    </svg>
+    <div class="seal-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <path d="M9 12l2 2 4-4"/>
+      </svg>
+    </div>
+  </div>
+</div>
 </body>
 
 </html>
