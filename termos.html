@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Termos de Uso | OCIMVIK</title>
+  <meta name="description" content="Leia os Termos de Uso da OCIMVIK. Conheça as condições de uso aplicadas a quem acessa e utiliza os conteúdos e serviços de nosso site."/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="OCIMVIK"/>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="images/Logo.png" />
+  <link rel="apple-touch-icon" href="images/Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
+  
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --preto:#0F1110;
+      --titanio:#8C9091;
+      --oliva:#3F4A34;
+      --grafite:#1C1F22;
+      --branco:#F4F3EF;
+      --cinza:#C8C9C7;
+      --carbon:#090A09;
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--preto);color:var(--branco);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6}
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:300;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px 48px;
+      background:rgba(15,17,16,0.82);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(140,144,145,0.1);
+    }
+    .nav-logo{display:flex;align-items:center;height:42px;cursor:pointer}
+    .nav-logo img{height:46px;width:auto;object-fit:contain;margin-top:3px;opacity:0.85;transition:opacity .3s ease,filter .3s ease}
+    .nav-logo:hover img{opacity:1;filter:drop-shadow(0 0 8px rgba(92,110,78,0.6))}
+    .nav-links{display:flex;gap:32px;list-style:none}
+    .nav-links a{color:rgba(244,243,239,.6);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .25s}
+    .nav-links a:hover{color:var(--branco)}
+    .nav-cta{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--branco);
+      border: 1px solid var(--oliva);
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .amazon-icon {
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+    .amazon-icon .az-smile {
+      fill: currentColor;
+      transition: fill 0.3s ease;
+    }
+    .nav-cta:hover {
+      background: rgba(92, 110, 78, 0.15);
+      border-color: #ff9900;
+    }
+    .nav-cta:hover .amazon-icon .az-smile {
+      fill: #ff9900;
+    }
+
+    /* PAGE HEADER */
+    .page-section {
+      padding: 140px 48px 80px;
+      min-height: calc(100vh - 350px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: radial-gradient(ellipse at 50% 30%, #171d15 0%, var(--preto) 70%);
+    }
+    .page-container {
+      max-width: 800px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .page-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 10px;
+    }
+    .section-label {
+      font-size:.7rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+      color:var(--oliva);margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:12px;
+    }
+    .section-label::before, .section-label::after{content:'';display:block;width:28px;height:1px;background:var(--oliva)}
+
+    .page-header h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.1;
+      background: linear-gradient(160deg, var(--branco) 40%, var(--titanio) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--titanio);
+    }
+
+    /* CONTENT CARD */
+    .content-card {
+      background: rgba(28, 31, 34, 0.4);
+      border: 1px solid rgba(140, 144, 145, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 6px;
+      padding: 48px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .content-card h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--branco);
+      margin-top: 8px;
+      border-bottom: 1px solid rgba(140, 144, 145, 0.1);
+      padding-bottom: 12px;
+    }
+    .content-card p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--cinza);
+      line-height: 1.8;
+    }
+    .content-card ul {
+      list-style-type: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .content-card ul li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--cinza);
+    }
+    .content-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--oliva);
+    }
+    .content-card a {
+      color: var(--branco);
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .content-card a:hover {
+      color: var(--oliva);
+    }
+
+    /* FOOTER */
+    .footer-section {
+      border-top: 1px solid rgba(140, 144, 145, 0.08);
+      background-color: var(--carbon);
+      padding: 60px 48px 48px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 48px;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      height: 48px;
+    }
+    .footer-logo img {
+      height: 58px;
+      width: auto;
+      object-fit: contain;
+      margin-top: 2px;
+      opacity: 0.8;
+      transition: opacity .3s ease, filter .3s ease;
+    }
+    .footer-logo:hover img {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px rgba(92, 110, 78, 0.6));
+    }
+    .brand-desc {
+      font-size: 0.85rem;
+      color: var(--titanio);
+      line-height: 1.6;
+      max-width: 320px;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(140, 144, 145, 0.15);
+      background: rgba(28, 31, 34, 0.4);
+      color: var(--titanio);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .footer-socials a:hover {
+      color: var(--branco);
+      border-color: var(--oliva);
+      background: rgba(92, 110, 78, 0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(92, 110, 78, 0.2);
+    }
+    .footer-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--branco);
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .footer-title::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background-color: var(--oliva);
+      margin-top: 8px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      color: var(--titanio);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.25s, padding-left 0.25s;
+    }
+    .footer-links a:hover {
+      color: var(--branco);
+      padding-left: 4px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(140, 144, 145, 0.06);
+      padding-top: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--titanio);
+    }
+    .footer-right {
+      font-size: 0.72rem;
+      color: rgba(200, 201, 199, 0.25);
+      letter-spacing: 0.06em;
+    }
+
+    /* REVEAL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    }
+    .d1 { animation-delay: 0.15s; }
+    .d2 { animation-delay: 0.3s; }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:992px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+    @media(max-width:768px) {
+      nav {
+        padding: 14px 20px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .page-section {
+        padding: 110px 20px 60px;
+      }
+      .content-card {
+        padding: 32px 24px;
+      }
+      .footer-section {
+        padding: 40px 20px 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-logo" onclick="window.location.href='index.html'">
+      <img src="images/Logo.png" alt="Logotipo OCIMVIK"/>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html#ciencia">Ciência</a></li>
+      <li><a href="index.html#produtos">Produtos</a></li>
+      <li><a href="laudo.html">Laudo</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+    <span class="nav-cta" aria-label="Suplementos OCIMVIK disponíveis na Amazon">
+      <svg class="amazon-icon" viewBox="0 0 602 182" width="48" height="14" xmlns="http://www.w3.org/2000/svg">
+        <path class="az-smile"
+          d="M373.6 141.2c-34.2 25.3-83.8 38.8-126.5 38.8-59.8 0-113.7-22.1-154.5-58.9-3.2-2.9-.3-6.9 3.5-4.6 44 25.6 98.4 41 154.7 41 37.9 0 79.6-7.9 118-24.1 5.8-2.5 10.6 3.8 4.8 7.8z" />
+        <path class="az-smile"
+          d="M387.4 125.6c-4.4-5.6-28.9-2.7-39.9-1.3-3.4.4-3.9-2.5-.8-4.7 19.6-13.7 51.6-9.8 55.4-5.2 3.8 4.7-1 37.1-19.3 52.6-2.8 2.4-5.5 1.1-4.3-2 4.2-10.4 13.3-33.8 8.9-39.4z" />
+        <path class="az-text"
+          d="M348.9 20.5V6.3c0-2.2 1.6-3.6 3.6-3.6h64.1c2 0 3.7 1.5 3.7 3.6v12.1c0 2-1.8 4.7-4.8 8.9l-33.2 47.4c12.3-.3 25.3 1.5 36.5 7.8 2.5 1.4 3.2 3.5 3.4 5.5v15.1c0 2.1-2.3 4.5-4.7 3.2-19.5-10.2-45.4-11.3-66.9.1-2.2 1.2-4.5-1.1-4.5-3.2V88.6c0-2.3 0-6.2 2.4-9.7l38.5-55.2h-33.5c-2 0-3.7-1.5-3.7-3.6l.1.4zM124.8 108.8H105c-1.9-.1-3.4-1.5-3.5-3.4V6.5c0-2.1 1.7-3.7 3.8-3.7h18.4c1.9.1 3.5 1.6 3.6 3.5v13h.4c4.8-12.7 13.9-18.6 26.1-18.6 12.4 0 20.2 5.9 25.7 18.6 4.8-12.7 15.7-18.6 27.4-18.6 8.3 0 17.4 3.4 22.9 11.1 6.3 8.5 5 20.9 5 31.8l0 61.5c0 2.1-1.7 3.7-3.8 3.7h-19.7c-2-.1-3.5-1.7-3.5-3.7V52.1c0-4.3.4-15-.6-19-.5-6.6-5.7-8.5-11.3-8.5-4.6 0-9.5 3.1-11.5 8.1-2 5-1.8 13.3-1.8 19.4v53c0 2.1-1.7 3.7-3.8 3.7h-19.7c-2-.1-3.5-1.7-3.5-3.7l0-53c0-11.3 1.8-27.9-11.8-27.9-13.8 0-13.3 16.2-13.3 27.9l0 53c0 2.1-1.7 3.7-3.8 3.7l-.6.1zM464 .7c29.3 0 45.1 25.1 45.1 57.1 0 30.9-17.5 55.4-45.1 55.4-28.7 0-44.3-25.1-44.3-56.4 0-31.5 15.8-56.1 44.3-56.1zm.2 20.7c-14.5 0-15.4 19.8-15.4 32.1 0 12.3-.2 38.6 15.2 38.6 15.2 0 15.9-21.2 15.9-34.1 0-8.5-.4-18.7-2.8-26.8-2.1-7-6.3-9.8-12.9-9.8zM549.4 108.8h-19.6c-2-.1-3.5-1.7-3.5-3.7l0-98.6c.2-1.9 1.8-3.4 3.8-3.4h18.2c1.7.1 3.2 1.4 3.5 3.1v15.1h.4c5.5-13.7 13.2-20.2 26.8-20.2 8.9 0 17.5 3.2 23.1 12 5.2 8.1 5.2 21.8 5.2 31.6v60.8c-.2 1.9-1.8 3.3-3.8 3.3h-19.8c-1.8-.1-3.3-1.5-3.5-3.3V51c0-11.1 1.3-27.3-12-27.3-4.7 0-9 3.1-11.1 7.9-2.7 6-3.1 12-3.1 19.4v54.1c0 2.1-1.7 3.7-3.8 3.7h.3zM306.8 62c0 7.7.2 14.2-3.7 21.1-3.2 5.6-8.2 9-13.8 9-7.7 0-12.2-5.8-12.2-14.5 0-17 15.3-20.1 29.7-20.1v4.5zm20.1 48.6c-1.3 1.2-3.3 1.3-4.8.5-6.8-5.6-8-8.2-11.7-13.6-11.2 11.4-19.1 14.8-33.6 14.8-17.2 0-30.5-10.6-30.5-31.8 0-16.6 9-27.9 21.8-33.4 11.1-4.9 26.6-5.8 38.5-7.1v-2.7c0-4.9.4-10.7-2.5-14.9-2.5-3.8-7.4-5.4-11.7-5.4-7.9 0-15 4.1-16.7 12.5-.4 1.9-1.7 3.7-3.6 3.8l-19.2-2.1c-1.7-.4-3.6-1.7-3.1-4.3 4.6-24.5 26.8-31.9 46.6-31.9 10.2 0 23.5 2.7 31.5 10.4 10.2 9.5 9.2 22.2 9.2 36v32.6c0 9.8 4.1 14.1 7.9 19.4 1.3 1.9 1.6 4.2-.1 5.6-4.3 3.6-12 10.2-16.2 14l-.3-.4h.4zM55.5 62c0 7.7.2 14.2-3.7 21.1-3.2 5.6-8.2 9-13.8 9-7.7 0-12.2-5.8-12.2-14.5 0-17 15.3-20.1 29.7-20.1v4.5zm20.1 48.6c-1.3 1.2-3.3 1.3-4.8.5-6.8-5.6-8-8.2-11.7-13.6-11.2 11.4-19.1 14.8-33.6 14.8C8.3 112.3-5 101.7-5 80.5c0-16.6 9-27.9 21.8-33.4 11.1-4.9 26.6-5.8 38.5-7.1v-2.7c0-4.9.4-10.7-2.5-14.9-2.5-3.8-7.4-5.4-11.7-5.4-7.9 0-15 4.1-16.7 12.5-.4 1.9-1.7 3.7-3.6 3.8L1.6 31.2c-1.7-.4-3.6-1.7-3.1-4.3C3.1 2.4 25.3-5 45.1-5c10.2 0 23.5 2.7 31.5 10.4 10.2 9.5 9.2 22.2 9.2 36v32.6c0 9.8 4.1 14.1 7.9 19.4 1.3 1.9 1.6 4.2-.1 5.6-4.3 3.6-12 10.2-16.2 14l-.3-.4h.5z" />
+      </svg>
+      Disponível na Amazon
+    </span>
+  </nav>
+
+  <main>
+    <section class="page-section" aria-label="Termos de Uso do Website">
+      <div class="page-container">
+        
+        <!-- HEADER -->
+        <div class="page-header reveal">
+          <div class="section-label">Legal</div>
+          <h1>Termos de Uso</h1>
+          <p>Última atualização: 03 de julho de 2026</p>
+        </div>
+
+        <!-- CONTENT CARD -->
+        <div class="content-card reveal d1">
+          <p>Seja bem-vindo ao site oficial da OCIMVIK (https://www.ocimvik.com.br). Ao acessar e utilizar este website, você concorda expressamente em cumprir e estar vinculado aos seguintes Termos de Uso. Caso não concorde com qualquer termo estabelecido aqui, solicitamos que não utilize o nosso site.</p>
+
+          <h2>1. Propriedade Intelectual</h2>
+          <p>Todo o conteúdo contido neste site – incluindo, sem limitação, textos, gráficos, logotipos, ícones, imagens, fotografias, vídeos, códigos-fonte, identidade visual e materiais informativos – é de propriedade exclusiva da OCIMVIK ou de seus licenciadores, estando protegido pelas leis nacionais e internacionais de direitos autorais e propriedade industrial.</p>
+          <p>A reprodução, cópia, distribuição, comercialização, modificação ou exibição pública de qualquer material do site sem a autorização prévia e por escrito da OCIMVIK é estritamente proibida.</p>
+
+          <h2>2. Responsabilidade do Usuário</h2>
+          <p>Ao utilizar o site, você se compromete a:</p>
+          <ul>
+            <li>Não utilizar o site para qualquer finalidade ilícita, contrária à moral ou aos bons costumes.</li>
+            <li>Não tentar burlar ou violar os mecanismos de segurança do site, nem transmitir vírus, cavalos de troia ou qualquer código nocivo.</li>
+            <li>Fornecer dados cadastrais verídicos e atualizados no formulário de contato.</li>
+          </ul>
+
+          <h2>3. Venda Exclusiva e Integração com Terceiros (Amazon)</h2>
+          <p>A OCIMVIK opera de forma integrada com a plataforma de e-commerce da Amazon. Nossos produtos são anunciados no site de forma meramente informativa para o usuário.</p>
+          <ul>
+            <li><strong>Transações e Pedidos:</strong> Ao decidir adquirir nossos produtos, o usuário reconhece que a compra, o processamento de pagamento, a logística de entrega, devoluções e cancelamentos ocorrem integralmente no ambiente da Amazon.</li>
+            <li><strong>Políticas de Terceiros:</strong> A OCIMVIK não se responsabiliza pelas práticas de privacidade, termos de transação ou taxas cobradas pela Amazon, bem como por falhas técnicas no sistema daquela plataforma.</li>
+          </ul>
+
+          <h2>4. Disclaimers e Isenção de Responsabilidade Médica</h2>
+          <p>As informações científicas e de saúde contidas neste site destinam-se exclusivamente a fins educativos e informativos sobre suplementação nutricional de alta performance. As informações sobre nossa Creatina Monohidratada 100% Pura não substituem, de forma alguma, o aconselhamento médico, nutricional ou de outros profissionais de saúde habilitados.</p>
+          <p>A OCIMVIK recomenda fortemente que você consulte um médico ou nutricionista antes de iniciar qualquer protocolo de suplementação.</p>
+
+          <h2>5. Links de Terceiros</h2>
+          <p>Nosso site pode conter links para outros sites mantidos por terceiros (como Amazon, Instagram e WhatsApp). Estes links são fornecidos unicamente para sua conveniência e facilidade de comunicação. Não temos controle sobre o conteúdo desses sites e não aceitamos qualquer responsabilidade por eles ou por quaisquer perdas ou danos que possam surgir do seu uso.</p>
+
+          <h2>6. Alterações nos Termos e Legislação</h2>
+          <p>Reservamo-nos o direito de alterar estes Termos de Uso a qualquer momento, sem aviso prévio. As modificações entrarão em vigor imediatamente após sua publicação no site.</p>
+          <p>Estes termos são regidos pelas leis da República Federativa do Brasil, sendo eleito o foro da comarca de residência da sede da OCIMVIK para dirimir eventuais controvérsias decorrentes deste documento.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-container">
+      <!-- Coluna 1: Logo e Descrição -->
+      <div class="footer-col col-brand">
+        <div class="footer-logo">
+          <img src="images/Logo.png" alt="Logo OCIMVIK" />
+        </div>
+        <p class="brand-desc">
+          Desenvolvemos formulações puras baseadas em fisiologia aplicada e evidências científicas para atletas que
+          exigem máxima precisão em sua rotina.
+        </p>
+        <div class="footer-socials">
+          <a href="https://wa.me/5512991024047" target="_blank" aria-label="Fale conosco no WhatsApp" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c5.554 0 10.076-4.522 10.08-10.076.002-2.693-1.047-5.225-2.951-7.13-1.905-1.905-4.437-2.954-7.13-2.956-5.553 0-10.075 4.522-10.079 10.079-.002 2.005.522 3.973 1.517 5.717l-.235-.374-1.002 3.661 3.74-.982-.361-.214zm11.137-7.603c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/ocimvik?igsh=MXI3cXRxeXBxMHppNg==" target="_blank"
+            aria-label="Instagram da OCIMVIK" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Navegação -->
+      <div class="footer-col">
+        <h3 class="footer-title">Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="index.html" aria-label="Ir para a página inicial">Início</a></li>
+          <li><a href="index.html#ciencia" aria-label="Ver seção de ciência e dados">Ciência</a></li>
+          <li><a href="index.html#produtos" aria-label="Conhecer nossa linha de produtos">Produtos</a></li>
+          <li><a href="index.html#manifesto" aria-label="Ler o manifesto da marca">Manifesto</a></li>
+          <li><a href="index.html#contato" aria-label="Fale conosco via formulário de contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Suporte & Legal -->
+      <div class="footer-col">
+        <h3 class="footer-title">Suporte</h3>
+        <ul class="footer-links">
+          <li><a href="laudo.html" aria-label="Ver laudo de pureza da Creatina">Laudo da Creatina</a></li>
+          <li><a href="privacidade.html" aria-label="Política de privacidade">Privacidade</a></li>
+          <li><a href="termos.html" aria-label="Termos de uso do site">Termos de Uso</a></li>
+          <li><a href="envio.html" aria-label="Políticas de envio e devolução">Envio &amp; Devoluções</a></li>
+          <li><a href="faq.html" aria-label="Perguntas frequentes">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Linha Inferior -->
+    <div class="footer-bottom">
+      <span class="footer-tagline">Precisão · Performance · Longevidade</span>
+      <span class="footer-right">© 2026 OCIMVIK. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

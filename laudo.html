@@ -371,63 +371,107 @@ tr:hover td {
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 48px;
 }
-.footer-left {
+.footer-col {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 .footer-logo {
   display: flex;
   align-items: center;
-  height: 32px;
+  height: 48px;
 }
 .footer-logo img {
-  height: 35px;
+  height: 58px;
   width: auto;
   object-fit: contain;
   margin-top: 2px;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity .3s ease, filter .3s ease;
-  transform-origin: left center;
 }
 .footer-logo:hover img {
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(92,110,78,0.6));
+  filter: drop-shadow(0 0 8px rgba(92, 110, 78, 0.6));
 }
-.footer-nav-links {
+.brand-desc {
+  font-size: 0.85rem;
+  color: var(--titanio);
+  line-height: 1.6;
+  max-width: 320px;
+}
+.footer-socials {
   display: flex;
-  gap: 32px;
-  list-style: none;
+  gap: 16px;
+  margin-top: 8px;
 }
-.footer-nav-links a {
-  color: rgba(244, 243, 239, .6);
-  text-decoration: none;
-  font-size: .78rem;
-  font-weight: 500;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  transition: color .25s;
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(140, 144, 145, 0.15);
+  background: rgba(28, 31, 34, 0.4);
+  color: var(--titanio);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.footer-nav-links a:hover {
+.footer-socials a:hover {
   color: var(--branco);
+  border-color: var(--oliva);
+  background: rgba(92, 110, 78, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(92, 110, 78, 0.2);
+}
+.footer-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--branco);
+  margin-bottom: 24px;
+  position: relative;
+}
+.footer-title::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: var(--oliva);
+  margin-top: 8px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  color: var(--titanio);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.25s, padding-left 0.25s;
+}
+.footer-links a:hover {
+  color: var(--branco);
+  padding-left: 4px;
 }
 .footer-bottom {
+  border-top: 1px solid rgba(140, 144, 145, 0.06);
+  padding-top: 32px;
   max-width: 1200px;
   margin: 0 auto;
-  border-top: 1px solid rgba(140, 144, 145, 0.06);
-  margin-top: 32px;
-  padding-top: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
 }
 .footer-tagline {
   font-size: 0.72rem;
@@ -693,20 +737,60 @@ tr:hover td {
 <!-- FOOTER -->
 <footer class="footer-section">
   <div class="footer-container">
-    <div class="footer-left">
+    <!-- Coluna 1: Logo e Descrição -->
+    <div class="footer-col col-brand">
       <div class="footer-logo">
         <img src="images/Logo.png" alt="Logo OCIMVIK" />
       </div>
+      <p class="brand-desc">
+        Desenvolvemos formulações puras baseadas em fisiologia aplicada e evidências científicas para atletas que
+        exigem máxima precisão em sua rotina.
+      </p>
+      <div class="footer-socials">
+        <a href="https://wa.me/5512991024047" target="_blank" aria-label="Fale conosco no WhatsApp" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c5.554 0 10.076-4.522 10.08-10.076.002-2.693-1.047-5.225-2.951-7.13-1.905-1.905-4.437-2.954-7.13-2.956-5.553 0-10.075 4.522-10.079 10.079-.002 2.005.522 3.973 1.517 5.717l-.235-.374-1.002 3.661 3.74-.982-.361-.214zm11.137-7.603c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/ocimvik?igsh=MXI3cXRxeXBxMHppNg==" target="_blank"
+          aria-label="Instagram da OCIMVIK" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
     </div>
-    <ul class="footer-nav-links" style="margin-bottom: 0;">
-      <li><a href="index.html">Início</a></li>
-      <li><a href="index.html#ciencia">Ciência</a></li>
-      <li><a href="index.html#produtos">Produtos</a></li>
-      <li><a href="index.html#manifesto">Manifesto</a></li>
-      <li><a href="index.html#contato">Contato</a></li>
-    </ul>
+
+    <!-- Coluna 2: Navegação -->
+    <div class="footer-col">
+      <h3 class="footer-title">Navegação</h3>
+      <ul class="footer-links">
+        <li><a href="index.html" aria-label="Ir para a página inicial">Início</a></li>
+        <li><a href="index.html#ciencia" aria-label="Ver seção de ciência e dados">Ciência</a></li>
+        <li><a href="index.html#produtos" aria-label="Conhecer nossa linha de produtos">Produtos</a></li>
+        <li><a href="index.html#manifesto" aria-label="Ler o manifesto da marca">Manifesto</a></li>
+        <li><a href="index.html#contato" aria-label="Fale conosco via formulário de contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <!-- Coluna 3: Suporte & Legal -->
+    <div class="footer-col">
+      <h3 class="footer-title">Suporte</h3>
+      <ul class="footer-links">
+        <li><a href="laudo.html" aria-label="Ver laudo de pureza da Creatina">Laudo da Creatina</a></li>
+        <li><a href="privacidade.html" aria-label="Política de privacidade">Privacidade</a></li>
+        <li><a href="termos.html" aria-label="Termos de uso do site">Termos de Uso</a></li>
+        <li><a href="envio.html" aria-label="Políticas de envio e devolução">Envio &amp; Devoluções</a></li>
+        <li><a href="faq.html" aria-label="Perguntas frequentes">FAQ</a></li>
+      </ul>
+    </div>
   </div>
 
+  <!-- Linha Inferior -->
   <div class="footer-bottom">
     <span class="footer-tagline">Precisão · Performance · Longevidade</span>
     <span class="footer-right">© 2026 OCIMVIK. Todos os direitos reservados.</span>
